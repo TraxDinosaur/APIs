@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="vaultGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a5a5a"/>
+      <stop offset="100%" stop-color="#303030"/>
+    </linearGradient>
+    <linearGradient id="dialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#a0a0a0"/>
+    </linearGradient>
+    <filter id="metalglow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Vault door background and frame -->
+  <rect x="20" y="20" width="160" height="160" rx="5" ry="5" fill="url(#vaultGradient)" stroke="#d4af37" stroke-width="5"/>
+  
+  <!-- Door details -->
+  <rect x="30" y="30" width="140" height="140" rx="3" ry="3" fill="none" stroke="#707070" stroke-width="2"/>
+  
+  <!-- Vault dial -->
+  <circle cx="100" cy="100" r="50" fill="url(#dialGradient)" stroke="#d4af37" stroke-width="3" filter="url(#metalglow)"/>
+  
+  <!-- Dial markings -->
+  <circle cx="100" cy="100" r="45" fill="none" stroke="#606060" stroke-width="1"/>
+  
+  <!-- Dial numbers - simplified -->
+  <text x="100" y="63" text-anchor="middle" fill="#303030" font-size="10" font-family="Arial">0</text>
+  <text x="137" y="100" text-anchor="middle" fill="#303030" font-size="10" font-family="Arial">25</text>
+  <text x="100" y="137" text-anchor="middle" fill="#303030" font-size="10" font-family="Arial">50</text>
+  <text x="63" y="100" text-anchor="middle" fill="#303030" font-size="10" font-family="Arial">75</text>
+  
+  <!-- Tick marks -->
+  <g stroke="#303030" stroke-width="1">
+    <!-- Major ticks -->
+    <line x1="100" y1="60" x2="100" y2="70" transform="rotate(0 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="70" transform="rotate(90 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="70" transform="rotate(180 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="70" transform="rotate(270 100 100)"/>
+    
+    <!-- Minor ticks (just a few for simplicity) -->
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(30 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(60 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(120 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(150 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(210 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(240 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(300 100 100)"/>
+    <line x1="100" y1="60" x2="100" y2="65" transform="rotate(330 100 100)"/>
+  </g>
+  
+  <!-- Dial handle -->
+  <circle cx="100" cy="100" r="20" fill="#303030" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="100" cy="100" r="15" fill="#505050"/>
+  <path d="M100,85 L100,70" stroke="#d4af37" stroke-width="6" stroke-linecap="round">
+    <!-- Animation for the dial -->
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 100 100" to="360 100 100" dur="10s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Vault door handle -->
+  <rect x="150" y="90" width="20" height="20" rx="3" ry="3" fill="#303030" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="160" cy="100" r="5" fill="#505050" stroke="#d4af37" stroke-width="1"/>
+  
+  <!-- Magical runes around the vault (simplified as glowing symbols) -->
+  <g fill="#d4af37" opacity="0.7">
+    <circle cx="50" cy="50" r="5">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="50" r="5">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="50" cy="150" r="5">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="150" cy="150" r="5">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3.2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+</svg>

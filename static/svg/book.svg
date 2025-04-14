@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140">
+  <defs>
+    <linearGradient id="bookCoverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#522b72"/>
+      <stop offset="100%" stop-color="#2d1b54"/>
+    </linearGradient>
+    <linearGradient id="bookPagesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f2f2"/>
+    </linearGradient>
+    <filter id="bookGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Book spine and shadow -->
+  <rect x="20" y="20" width="15" height="100" rx="2" ry="2" fill="#1a0a2e"/>
+  <ellipse cx="80" cy="125" rx="70" ry="10" fill="#000000" opacity="0.2"/>
+  
+  <!-- Book cover - closed part -->
+  <path d="M20,20 L20,120 L35,120 L35,20 Z" fill="#1a0a2e"/>
+  
+  <!-- Book cover - main part -->
+  <path d="M35,20 L150,20 L150,120 L35,120 Z" fill="url(#bookCoverGradient)" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Book pages -->
+  <path d="M38,25 L145,25 L145,115 L38,115 Z" fill="url(#bookPagesGradient)"/>
+  
+  <!-- Page edges -->
+  <path d="M38,25 L38,115" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="1,2"/>
+  <path d="M145,25 L145,115" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="1,2"/>
+  
+  <!-- Book decorative elements -->
+  <rect x="60" y="35" width="65" height="2" fill="#d4af37"/>
+  <rect x="60" y="45" width="65" height="1" fill="#d4af37"/>
+  <rect x="60" y="52" width="65" height="1" fill="#d4af37"/>
+  <rect x="60" y="59" width="65" height="1" fill="#d4af37"/>
+  <rect x="60" y="66" width="65" height="1" fill="#d4af37"/>
+  <rect x="60" y="73" width="40" height="1" fill="#d4af37"/>
+  
+  <!-- Book magical symbol -->
+  <circle cx="90" cy="95" r="15" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <path d="M90,80 L90,110 M75,95 L105,95 M80,85 L100,105 M80,105 L100,85" stroke="#d4af37" stroke-width="1"/>
+  
+  <!-- Book magical glow -->
+  <circle cx="90" cy="95" r="20" fill="#d4af37" opacity="0.2" filter="url(#bookGlow)">
+    <animate attributeName="opacity" values="0.2;0.1;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Book clasp -->
+  <rect x="140" y="65" width="12" height="10" rx="2" ry="2" fill="#d4af37"/>
+</svg>

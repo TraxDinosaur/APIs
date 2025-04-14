@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 120">
+  <defs>
+    <linearGradient id="wandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9c6644"/>
+      <stop offset="100%" stop-color="#7d5236"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <g>
+    <!-- Wand handle -->
+    <path d="M14,40 L14,110 C14,115 10,120 7,120 C4,120 0,115 0,110 L0,40 C0,35 4,30 7,30 C10,30 14,35 14,40 Z" fill="url(#wandGradient)"/>
+    
+    <!-- Wand tip -->
+    <path d="M7,0 L14,30 L0,30 Z" fill="#d4af37" filter="url(#glow)"/>
+    
+    <!-- Wand decorative elements -->
+    <rect x="0" y="35" width="14" height="2" fill="#d4af37"/>
+    <rect x="0" y="40" width="14" height="1" fill="#d4af37"/>
+    
+    <!-- Sparkles -->
+    <circle cx="7" cy="5" r="1" fill="white" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="10" cy="12" r="0.8" fill="white" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="4" cy="15" r="0.8" fill="white" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
