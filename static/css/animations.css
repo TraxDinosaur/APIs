@@ -1,0 +1,312 @@
+/* Wizarding World Theme - Animations CSS */
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Pulse Animation (for magic circle) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
+
+/* Spin Animation for loader */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sparkling effect for card hover */
+@keyframes sparkle {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Wand wave animation for copy button */
+@keyframes wandwave {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Magic spell cast animation */
+@keyframes spellcast {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Magic dust falling animation */
+@keyframes magicdust {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Page transition fade */
+@keyframes pagefade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover glow animation */
+.magic-btn:hover {
+    animation: buttonglow 1.5s infinite alternate;
+}
+
+@keyframes buttonglow {
+    0% {
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+}
+
+/* Wand cursor effect */
+.wand-cursor {
+    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 0l2 14h-2l2 18' stroke='%23d4af37' stroke-width='2' fill='none'/%3E%3C/svg%3E") 5 30, auto;
+}
+
+/* Copy button animation */
+.copy-btn.copied {
+    animation: wandwave 0.6s ease-in-out;
+}
+
+/* Copying success animation */
+.copy-animation {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 60%);
+    border-radius: 8px;
+    opacity: 0;
+    animation: spellcast 0.8s ease-out forwards;
+}
+
+/* Magic dust particles */
+.magic-dust {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: var(--magic-gold);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: magicdust 2s linear forwards;
+}
+
+/* Page section fade-in animation */
+.apis-section, .demos-section, .documentation-section, .about-section {
+    animation: pagefade 1s ease-out;
+}
+
+/* Individual API cards staggered fade-in */
+.api-card:nth-child(1) {
+    animation: pagefade 0.5s ease-out;
+}
+.api-card:nth-child(2) {
+    animation: pagefade 0.5s ease-out 0.2s both;
+}
+.api-card:nth-child(3) {
+    animation: pagefade 0.5s ease-out 0.4s both;
+}
+.api-card:nth-child(4) {
+    animation: pagefade 0.5s ease-out 0.6s both;
+}
+
+/* Magic light trail on hover for navigation */
+.navbar-dark .navbar-nav .nav-link:hover::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--magic-gold);
+    opacity: 0.6;
+    filter: blur(3px);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    animation: pulse 2s infinite;
+}
+
+/* Animated border for active sections */
+.demo-container.active {
+    position: relative;
+}
+
+.demo-container.active::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;
+    background: linear-gradient(45deg, var(--magic-gold), var(--potion-purple), var(--spell-green), var(--magic-gold));
+    background-size: 400% 400%;
+    border-radius: 18px;
+    animation: sparkle 3s infinite ease;
+}
+
+/* Form input focus animation */
+.form-control:focus {
+    border-color: var(--magic-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    animation: inputglow 1.5s infinite alternate;
+}
+
+@keyframes inputglow {
+    0% {
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    }
+}
+
+/* Magical writing animation */
+.magic-writing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    width: 0;
+    animation: typing 3.5s steps(40, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Magical fade in for API results */
+.fade-in {
+    opacity: 0;
+    animation: fadein 1s ease-in forwards;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Scroll indicator for magic scrolls */
+.scroll-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* Shimmer effect for magic gold elements */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: shimmerEffect 2s infinite;
+}
+
+@keyframes shimmerEffect {
+    100% {
+        transform: translateX(50%);
+    }
+}
